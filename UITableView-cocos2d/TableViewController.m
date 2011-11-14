@@ -7,6 +7,7 @@
 //
 
 #import "TableViewController.h"
+#import "cocos2d.h"
 
 
 @implementation TableViewController
@@ -221,6 +222,8 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    
+    CCLOG(@"%s", __FUNCTION__);
 }
 
 @end
