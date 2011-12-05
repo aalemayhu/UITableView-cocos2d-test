@@ -37,17 +37,17 @@
 -(id) init
 {
 	if( (self=[super init])) {
-		
-        CCMenuItemFont *itemOne = [CCMenuItemFont itemFromString:@"UITableView Plain" target:self selector:@selector(openTableViewPlain)];
-        CCMenuItemFont *itemTwo = [CCMenuItemFont itemFromString:@"UITableView Grouped" target:self selector:@selector(openTableViewGrouped)];
         
-        CCMenu *menu = [CCMenu menuWithItems:itemOne, itemTwo, nil];
+        CCLabelTTF *labelOne = [CCLabelTTF labelWithString:@"UITableView Plain" fontName:@"Arial" fontSize:40];
+        CCLabelTTF *labelTwo = [CCLabelTTF labelWithString:@"UITableView Grouped" fontName:@"Arial" fontSize:40];
+        CCMenuItemLabel *itemOne = [CCMenuItemLabel itemWithLabel:labelOne target:self selector:@selector(openTableViewPlain)];
+        CCMenuItemLabel *itemTwo = [CCMenuItemLabel itemWithLabel:labelTwo target:self selector:@selector(openTableViewGrouped)];
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
+        CCMenu *menu = [CCMenu menuWithItems:itemOne, itemTwo, nil];
         menu.position = ccp(winSize.width/2, winSize.height/2);
         [menu alignItemsVertically];
-        
         [self addChild:menu];
 	}
 	return self;
@@ -57,12 +57,19 @@
 #pragma mark Open Table Methods
 
 -(void) openTableViewPlain{
-    [[CCDirector sharedDirector] replaceScene:[TableViewLayerPlain node]];
+    
+    CCScene *newScene = [CCTransitionSlideInL transitionWithDuration:.3 
+                                                               scene:[TableViewLayerPlain node]];
+    
+    [[CCDirector sharedDirector] replaceScene:newScene];
 }
 
 -(void) openTableViewGrouped{
-
-    [[CCDirector sharedDirector] replaceScene:[TableViewLayerGrouped node]];
+    
+    CCScene *newScene = [CCTransitionSlideInL transitionWithDuration:.3 
+                                                               scene:[TableViewLayerGrouped node]];
+    
+    [[CCDirector sharedDirector] replaceScene:newScene];
 }
 
 
