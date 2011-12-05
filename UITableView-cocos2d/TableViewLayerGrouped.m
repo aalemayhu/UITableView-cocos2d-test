@@ -9,9 +9,12 @@
 #import "TableViewLayerGrouped.h"
 #import "HelloWorldLayer.h"
 #import "TableViewController.h"
+#import "com.ccColor3B.h"
 
 @interface TableViewLayerGrouped(nav)
 -(void)returnToHelloWorldLayer;
+-(void) toggleAccesoryToTable;
+-(void) toggleThumbNail;
 @end
 
 @implementation TableViewLayerGrouped
@@ -35,15 +38,23 @@
 {
 	if( (self=[super init])) {
         
-        CCMenuItemFont *itemOne = [CCMenuItemFont itemFromString:@"Return" target:self selector:@selector(returnToHelloWorldLayer)];
-        CCMenuItemFont *itemTwo = [CCMenuItemFont itemFromString:@"Accesory" target:self selector:@selector(addAccesoryToTable)];
-        CCMenuItemFont *itemThree = [CCMenuItemFont itemFromString:@"Thumbnail" target:self selector:@selector(addThumbNail)];
-
-        CCMenu *menu = [CCMenu menuWithItems:itemOne, itemTwo, itemThree, nil];
-        [menu alignItemsVertically];
+        CCLabelTTF *labeOne = [CCLabelTTF labelWithString:@"Return" fontName:@"Arial" fontSize:15];
+        labeTwo = [CCLabelTTF labelWithString:@"Accessory off" fontName:@"Arial" fontSize:15];
+        labelThree = [CCLabelTTF labelWithString:@"Thumbnail off" fontName:@"Arial" fontSize:15];
+        
+        CCMenuItemLabel *itemOne = [CCMenuItemLabel itemWithLabel:labeOne target:self selector:@selector(returnToHelloWorldLayer)];        
+        CCMenuItemLabel *itemTwo = [CCMenuItemLabel itemWithLabel:labeTwo target:self selector:@selector(toggleAccesoryToTable)];
+        CCMenuItemLabel *itemThree = [CCMenuItemLabel itemWithLabel:labelThree target:self selector:@selector(toggleThumbNail)];
+        
+        [itemOne setColor:ccBROWN];
+        [itemTwo setColor:ccRED];
+        [itemThree setColor:ccRED];
         
         CGSize winSize = [[CCDirector sharedDirector] winSize];
-        menu.position = ccp(winSize.width - itemOne.contentSize.width, winSize.height/2);
+        
+        CCMenu *menu = [CCMenu menuWithItems:itemOne, itemTwo, itemThree, nil];
+        menu.position = ccp(winSize.width - (itemOne.contentSize.width * 2), winSize.height/2);
+        [menu alignItemsVertically];
         [self addChild:menu];
         
 
@@ -60,11 +71,28 @@
     [[[CCDirector sharedDirector] openGLView] addSubview:view];
 }
 
--(void) addAccesoryToTable{
+-(void) toggleAccesoryToTable{
+    if([[labeTwo string] isEqualToString:@"Accessory off"]) {
+        [labeTwo setString:@"Accessory on"];
+        [labeTwo setColor:ccGREEN];
+    }else {
+        [labeTwo setString:@"Accessory off"];
+        [labeTwo setColor:ccRED];
+    }
+    
     [tableViewController addAccessory];
 }
 
--(void) addThumbNail{
+-(void) toggleThumbNail{
+    
+    if ([[labelThree string] isEqualToString:@"Thumbnail off"]) {
+        [labelThree setString:@"Thumbnail on"];
+        [labelThree setColor:ccGREEN];
+    }else {
+        [labelThree setString:@"Thumbnail off"];
+        [labelThree setColor:ccRED];
+    }
+    
     [tableViewController addThumbnail];
 }
 
