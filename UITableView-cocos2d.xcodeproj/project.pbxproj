@@ -839,6 +839,7 @@
 		09AC9FCC14717AA900EFC28E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = Flexnor;
 			};
 			buildConfigurationList = 09AC9FCF14717AA900EFC28E /* Build configuration list for PBXProject "UITableView-cocos2d" */;
@@ -1034,6 +1035,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UITableView-cocos2d/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "UITableView-cocos2d/Resources/Info.plist";
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1049,6 +1051,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UITableView-cocos2d/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "UITableView-cocos2d/Resources/Info.plist";
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1076,6 +1079,7 @@
 				09ACA14914717AAF00EFC28E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
