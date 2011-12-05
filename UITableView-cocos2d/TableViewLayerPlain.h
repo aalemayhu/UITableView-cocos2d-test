@@ -12,6 +12,8 @@
 @class TableViewController;
 @interface TableViewLayerPlain : CCLayer {
     TableViewController *tableViewController;
+    
+    CCLabelTTF *labeTwo, *labelThree;
 }
 
 @end
