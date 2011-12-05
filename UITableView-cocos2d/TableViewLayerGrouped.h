@@ -13,6 +13,8 @@
 @interface TableViewLayerGrouped : CCLayer {
     
     TableViewController *tableViewController;
+
+    CCLabelTTF *labeTwo, *labelThree;
 }
 
 @end
