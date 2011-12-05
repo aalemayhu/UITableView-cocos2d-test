@@ -69,8 +69,13 @@
 }
 
 -(void) returnToHelloWorldLayer{
+
     [tableViewController.view removeFromSuperview];
-    [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer node]];
+    
+    CCScene *newScene = [CCTransitionSlideInR transitionWithDuration:.3 
+                                                               scene:[HelloWorldLayer node]];
+    
+    [[CCDirector sharedDirector] replaceScene:newScene];
 }
 
 // on "dealloc" you need to release all your retained objects
