@@ -128,6 +128,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095FF8B9148C49A9005C1C13 /* com.ccColor3B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = com.ccColor3B.h; sourceTree = "<group>"; };
 		09AC9FD514717AAA00EFC28E /* UITableView-cocos2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UITableView-cocos2d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AC9FD914717AAA00EFC28E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		09AC9FDB14717AAA00EFC28E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -774,6 +775,7 @@
 		09ACA1541471833100EFC28E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				095FF8B9148C49A9005C1C13 /* com.ccColor3B.h */,
 				09ACA14414717AAF00EFC28E /* GameConfig.h */,
 				09ACA13B14717AAE00EFC28E /* AppDelegate.h */,
 				09ACA13C14717AAE00EFC28E /* AppDelegate.m */,
