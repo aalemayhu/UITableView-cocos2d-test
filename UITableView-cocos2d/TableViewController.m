@@ -31,12 +31,12 @@
 }
 
 -(void) addAccessory{
-    useAccessory = YES;
+    useAccessory = !useAccessory;
     [[self tableView] reloadData];
 }
 
 -(void) addThumbnail {
-    useThumbnail = YES;
+    useThumbnail = !useThumbnail;
     [[self tableView] reloadData];
 }
 
@@ -118,12 +118,17 @@
         int randomAccesory = rand() % 3;
         
         cell.accessoryType = a[randomAccesory];
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     if (useThumbnail) {
         UIImage *image = [UIImage imageNamed:@"Icon-Small.png"];
         [[cell imageView] setImage:image];
+    }else {
+        cell.imageView.image = nil;
     }
+
     
     if (isGrouped) {
         if ( indexPath.section == 0) {
