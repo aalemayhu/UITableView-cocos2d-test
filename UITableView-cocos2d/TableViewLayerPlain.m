@@ -48,12 +48,7 @@
         menu.position = ccp(winSize.width - itemOne.contentSize.width, winSize.height/2);
         [menu alignItemsVertically];
         [self addChild:menu];
-        
-        tableViewController = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
-        UIView *view = tableViewController.view;
-        
-        [[[CCDirector sharedDirector] openGLView] addSubview:view];
-        
+
 	}
 	return self;
 }
@@ -64,6 +59,15 @@
 
 -(void) addThumbNail{
     [tableViewController addThumbnail];
+}
+
+-(void) onEnterTransitionDidFinish{
+
+    //Add the tableview when the transition is done
+    tableViewController = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
+    UIView *view = tableViewController.view;
+    
+    [[[CCDirector sharedDirector] openGLView] addSubview:view];
 }
 
 -(void) returnToHelloWorldLayer{
