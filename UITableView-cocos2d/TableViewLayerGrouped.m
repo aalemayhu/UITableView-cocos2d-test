@@ -46,13 +46,18 @@
         menu.position = ccp(winSize.width - itemOne.contentSize.width, winSize.height/2);
         [self addChild:menu];
         
-        tableViewController = [[TableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-        UIView *view = tableViewController.view;
-        
-        [[[CCDirector sharedDirector] openGLView] addSubview:view];
+
         
 	}
 	return self;
+}
+
+-(void) onEnterTransitionDidFinish{
+    
+    tableViewController = [[TableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    UIView *view = tableViewController.view;
+    
+    [[[CCDirector sharedDirector] openGLView] addSubview:view];
 }
 
 -(void) addAccesoryToTable{
