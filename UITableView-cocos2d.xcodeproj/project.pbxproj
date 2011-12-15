@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A79BC4149AAAF500339BB2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A79BC3149AAAF500339BB2 /* DetailViewController.m */; };
 		09AC9FDA14717AAA00EFC28E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AC9FD914717AAA00EFC28E /* QuartzCore.framework */; };
 		09AC9FDC14717AAA00EFC28E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AC9FDB14717AAA00EFC28E /* OpenGLES.framework */; };
 		09AC9FDE14717AAA00EFC28E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09AC9FDD14717AAA00EFC28E /* OpenAL.framework */; };
@@ -129,6 +130,8 @@
 
 /* Begin PBXFileReference section */
 		095FF8B9148C49A9005C1C13 /* com.ccColor3B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = com.ccColor3B.h; sourceTree = "<group>"; };
+		09A79BC2149AAAF500339BB2 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		09A79BC3149AAAF500339BB2 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		09AC9FD514717AAA00EFC28E /* UITableView-cocos2d.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UITableView-cocos2d.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AC9FD914717AAA00EFC28E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		09AC9FDB14717AAA00EFC28E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -801,6 +804,8 @@
 			children = (
 				09ACA14D14717B3B00EFC28E /* TableViewController.h */,
 				09ACA158147183FA00EFC28E /* TableViewController.m */,
+				09A79BC2149AAAF500339BB2 /* DetailViewController.h */,
+				09A79BC3149AAAF500339BB2 /* DetailViewController.m */,
 			);
 			name = "View controllers";
 			sourceTree = "<group>";
@@ -986,6 +991,7 @@
 				09ACA15214717D4500EFC28E /* TableViewLayerPlain.m in Sources */,
 				09ACA159147183FA00EFC28E /* TableViewController.m in Sources */,
 				09ACA15D147184AA00EFC28E /* TableViewLayerGrouped.m in Sources */,
+				09A79BC4149AAAF500339BB2 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
