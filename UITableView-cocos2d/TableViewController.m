@@ -134,7 +134,7 @@
     if (isGrouped) {
         if ( indexPath.section == 0) {
             if (indexPath.row == 0) {
-                cell.textLabel.text = [NSString stringWithFormat:@"section %d", indexPath.row+1];
+                cell.textLabel.text = [NSString stringWithFormat:@"section %d", indexPath.row];
                 cell.textLabel.textAlignment = UITextAlignmentCenter;
             }
             else if (indexPath.row == 1)
@@ -143,7 +143,7 @@
                 cell.textLabel.text = [NSString stringWithFormat:@"Cell:  %d", indexPath.row];
         } else if (indexPath.section == 1) {
             if (indexPath.row == 0) {
-                cell.textLabel.text = [NSString stringWithFormat:@"section %d", indexPath.row];
+                cell.textLabel.text = [NSString stringWithFormat:@"section %d", indexPath.row+1];
                 cell.textLabel.textAlignment = UITextAlignmentCenter;
             }
             else if (indexPath.row == 1)
@@ -220,7 +220,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *title = [NSString stringWithFormat:@"Cell: %d", indexPath.row];    
+    NSString *title;
+    if (isGrouped == NO) {
+        title = [NSString stringWithFormat:@"Cell: %d", indexPath.row];       
+    }else{
+        title = [NSString stringWithFormat:@"Section: %d", indexPath.section];       
+    }
+    
     // Navigation logic may go here. Create and push another view controller.
     DetailViewController *detailViewController = [[DetailViewController alloc] initWitTitle:title]; 
 
