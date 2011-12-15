@@ -6,8 +6,6 @@
 //  Copyright Flexnor 2011. All rights reserved.
 //
 
-#import "cocos2d.h"
-
 #import "AppDelegate.h"
 #import "GameConfig.h"
 #import "HelloWorldLayer.h"
@@ -15,7 +13,7 @@
 
 @implementation AppDelegate
 
-@synthesize window;
+@synthesize window, navigationController;
 
 - (void) removeStartupFlicker
 {
@@ -50,10 +48,13 @@
 	
 	
 	CCDirector *director = [CCDirector sharedDirector];
-	
-	// Init the View Controller
+    
+    // Init the View Controller
 	viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
 	viewController.wantsFullScreenLayout = YES;
+    
+    //Init the nav controller
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	
 	//
 	// Create the EAGLView manually
@@ -96,7 +97,7 @@
 	[viewController setView:glView];
 	
 	// make the View Controller a child of the main window
-	[window addSubview: viewController.view];
+	[window addSubview: navigationController.view];
 	
 	[window makeKeyAndVisible];
 	
@@ -138,9 +139,8 @@
 	CCDirector *director = [CCDirector sharedDirector];
 	
 	[[director openGLView] removeFromSuperview];
-	
+    [navigationController release];
 	[viewController release];
-	
 	[window release];
 	
 	[director end];	
