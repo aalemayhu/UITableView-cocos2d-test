@@ -6,9 +6,10 @@
 //  Copyright 2011 Flexnor. All rights reserved.
 //
 
+#import "DetailViewController.h"
 #import "TableViewController.h"
+#import "AppDelegate.h"
 #import "cocos2d.h"
-
 
 @implementation TableViewController
 
@@ -128,7 +129,7 @@
     }else {
         cell.imageView.image = nil;
     }
-
+    
     
     if (isGrouped) {
         if ( indexPath.section == 0) {
@@ -219,16 +220,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *title = [NSString stringWithFormat:@"Cell: %d", indexPath.row];    
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    DetailViewController *detailViewController = [[DetailViewController alloc] initWitTitle:title]; 
+
+    //Get access to navigation controller from delegate
+    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate.navigationController pushViewController:detailViewController animated:YES];
     
-    CCLOG(@"%s", __FUNCTION__);
+    [detailViewController release];
 }
 
 @end
