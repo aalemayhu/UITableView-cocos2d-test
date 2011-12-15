@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [self setTitle:title];
+    [[self.navigationController navigationBar] setHidden:NO];
     [super viewDidLoad];
 }
 
