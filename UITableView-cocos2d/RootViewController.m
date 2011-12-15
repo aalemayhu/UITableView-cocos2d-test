@@ -41,6 +41,12 @@
  }
  */
 
+-(void) viewWillAppear:(BOOL)animated{
+    
+    [[self.navigationController navigationBar] setHidden:YES];
+    [super viewWillAppear:animated];
+}
+
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
