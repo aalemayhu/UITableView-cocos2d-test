@@ -13,3 +13,6 @@ xcuserdata
 
 # build products
 build/
+
+# cocos2d sources
+UITableView-cocos2d/libs/
